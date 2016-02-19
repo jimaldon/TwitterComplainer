@@ -8,7 +8,7 @@ import twitter
  
 def test():
  
-        #run speedtest-cli
+       
         print 'running test'
         a = os.popen("python /home/pi/speedtest-cli --simple").read()
         print 'ran'
@@ -35,10 +35,10 @@ def test():
         out_file.close()
  
         #connect to twitter
-        TOKEN="4866393148-y5325MPPbU3McfMckECw9Yzh4uhCWQBVgqEe5b0"
-        TOKEN_KEY="oLCt0REhIZZTRkDEHyjt5bXmbfbDMsADq4RSOghqMFfp5"
-        CON_SEC="kzxX5sebZXgu3PW3bqgznyuON"
-        CON_SEC_KEY="yJggS7dFtftXQL6Tie8fMjVVfydlcOBEx813TFSlRsdleWD4Jr"
+        TOKEN="[TOKEN_CODE_HERE]"
+        TOKEN_KEY="[TOKEN_PASS_HERE]"
+        CON_SEC="[CONSUMER_CODE_HERE]"
+        CON_SEC_KEY"[CONSUMER_PASS_HERE]"
 
         my_auth = twitter.OAuth(TOKEN,TOKEN_KEY,CON_SEC,CON_SEC_KEY)
         twit = twitter.Twitter(auth=my_auth)
@@ -51,17 +51,20 @@ def test():
                 except:
                         pass
  
-        # tweet if down speed is less than whatever I set
+        # tweet if down speed is less than whatever I set. Here it is 8Mbps.
         elif eval(d)<8:
                 print "trying to tweet"
                 try:
-                        # i know there must be a better way than to do (str(int(eval())))
+                        # Write the twitter message. Make sure it's less than 140 characters long.
+                        #You can post more than one tweet each time. Make sure not to break twitter API terms.
                         tweet="Hey @bsnlbroadband @BSNLCorporate why is my internet " + str(d) + "down\\" + str(u) + "up, when I pay for 8Mbps down in #Faridabad? @TelecomTalk @traigov999"
+                        #tweet2=
+                        #tweet3= 
                         
-			tweet2="Hey @bsnlbroadband @BSNLCorporate why is my internet " + str(d) + "down\\" + str(u) + "up, when I pay for 8Mbps down in #Faridabad? @rsprasad #DigitalIndia"
-
                         twit.statuses.update(status=tweet)
-                        twit.statuses.update(status=tweet2)
+                        #twit.statuses.update(status=tweet2)
+                        #twit.statuses.update(status=tweet2)
+                        
                 except Exception,e:
                         print str(e)
                         pass

@@ -7,3 +7,5 @@ Required Python packages: twiiter
 
 
 Required general linux package: speedtest-cli
+
+A working model is on https://twitter.com/bsnl_customer

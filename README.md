@@ -3,9 +3,15 @@ This is a twitter bot written in python which periodically checks the internet s
 
 This is a fork of a Comcast complainer bot posted on reddit.
 
-Required Python packages: twiiter
+Required PyPI package
+```
+pip install twitter
+```
 
 
-Required general linux package: speedtest-cli
+Required Ubuntu package
+```
+sudo apt-get install speedtest-cli
+```
 
-A working model is on https://twitter.com/bsnl_customer
+A working bot based on this project can be found at https://twitter.com/bsnl_customer
